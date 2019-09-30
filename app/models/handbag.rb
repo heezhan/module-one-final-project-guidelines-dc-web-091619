@@ -1,3 +1,6 @@
-class Handbag < ActiveRecord::Base[5.2]
+class Handbag < ActiveRecord::Base
+  attr_reader :brand, :model_name, :cost
+  @@all = []
 
+  def initialize()
 end

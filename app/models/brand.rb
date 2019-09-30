@@ -1,3 +1,3 @@
-class Brand < ActiveRecord::Base[5.2]
+class Brand < ActiveRecord::Base
 
 end
