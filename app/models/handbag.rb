@@ -1,4 +1,6 @@
 class Handbag < ActiveRecord::Base
+    has_many :rentals 
+    has_many :customers, through: rentals 
 
   attr_reader :brand, :model_name, :cost
   @@all = []

@@ -1,4 +1,6 @@
 class Customer < ActiveRecord::Base
+    has_many :rentals
+    has_many :handbags, through: :rentals 
 
     attr_accessor :name, :birthday, :address, :budget 
 
@@ -10,6 +12,10 @@ class Customer < ActiveRecord::Base
         @address = address 
         @budget = budget 
         @@all << self 
+    end 
+
+    def self.all 
+        @@all 
     end 
 
 end 
