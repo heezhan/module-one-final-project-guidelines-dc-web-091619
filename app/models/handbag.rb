@@ -1,3 +1,3 @@
-class Handbag < ActiveRecord::Base[5.2]
+class Handbag < ActiveRecord::Base
 
 end
