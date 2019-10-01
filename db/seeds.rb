@@ -27,7 +27,7 @@ daphnemamoulides = Customer.find_or_create_by(name: "Daphne Mamoulides", birthda
 heidialbrecht = Customer.find_or_create_by(name: "Heidi Albrecht", birthday: "04.17.1991", address: "4212 Dartford Dr. Seattle, WA 98101", budget: 800.00)
 
 #Handbag
-chanel_boybag = Hangbag.find_or_create_by(brand: "Chanel", model_name: "Boy Bag small", cost: 800)
+chanel_boybag = Handbag.find_or_create_by(brand: chanel, model_name: "Boy Bag small", cost: 800)
 chanel_caviar = Handbag.find_or_create_by(brand: "Chanel", model_name: "Caviar small", cost: 800)
 prada_cahier = Handbag.find_or_create_by(brand: "Prada", model_name: "Cahier small", cost: 400)
 prada_bucketbag = Handbag.find_or_create_by(brand: "Prada", model_name: "Nylon Bucket Bag", cost: 400)
@@ -41,4 +41,4 @@ coach_tabby = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Tabby
 coach_dreamer = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Dreamer", cost: 100)
 
 # Rental
-rental1 = Rental.find_or_create_by(christinapark, chanel_boybag)
+rental1 = Rental.find_or_create_by(customer: christinapark, chanel_boybag)

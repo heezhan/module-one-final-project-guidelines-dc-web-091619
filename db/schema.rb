@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 4) do
   end
 
   create_table "handbags", force: :cascade do |t|
-    t.string "brand"
-    t.string "model_name"
+    t.string "bag_type"
     t.float "cost"
+    t.integer "brand_id"
   end
 
   create_table "rentals", force: :cascade do |t|

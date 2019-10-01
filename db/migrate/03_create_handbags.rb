@@ -1,9 +1,9 @@
 class CreateHandbags < ActiveRecord::Migration[5.2]
     def change
       create_table :handbags do |t|
-        t.string :brand
-        t.string :model_name 
-        t.float :cost 
+        t.string :bag_type 
+        t.float :cost
+        t.integer :brand_id
       end
     end
 end
