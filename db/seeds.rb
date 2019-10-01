@@ -23,8 +23,8 @@ seungyeonlee = Customer.find_or_create_by(name: "Seungyeon Lee", birthday: "06.1
 joycejin = Customer.find_or_create_by(name: "Joyce Jin", birthday: "10.28.1989", address: "8312 Wolftrap Rd. Viennam VA 22182", budget: 100.00)
 jinlee = Customer.find_or_create_by(name: "Jin Lee", birthday:"08.15.1966", address: "15021 Greymont Dr. Centerville, VA 20120", budget: 100.00)
 gracekwon = Customer.find_or_create_by(name: "Grace Kwon", birthday: "12.23.1982", address: "9865 Burke Pond Ct. Burke, VA 22015", budget: 200.00)
-daphnemamou = Customer.find_or_create_by(name: "Daphne Mamoulides", birthday: "07.01.1990", address: "533A Putnam Ave. #2 Brooklyn, NY 11221", budget: 600.00)
-c10 = Customer.find_or_create_by(name: "Heidi Albrecht", birthday: "04.17.1991", address: "4212 Dartford Dr. Seattle, WA 98101", budget: 800.00)
+daphnemamoulides = Customer.find_or_create_by(name: "Daphne Mamoulides", birthday: "07.01.1990", address: "533A Putnam Ave. #2 Brooklyn, NY 11221", budget: 600.00)
+heidialbrecht = Customer.find_or_create_by(name: "Heidi Albrecht", birthday: "04.17.1991", address: "4212 Dartford Dr. Seattle, WA 98101", budget: 800.00)
 
 # Handbag
 # Rental
