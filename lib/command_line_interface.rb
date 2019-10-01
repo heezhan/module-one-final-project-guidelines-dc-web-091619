@@ -9,8 +9,15 @@ def get_name_from_user
     customer_name = gets.chomp
     if Customer.find_by(name: customer_name)
         puts "You are already in the system"
-    else 
-        Customer.find_or_create_by(name: customer_name)
+    else
+        puts "What is your address?"
+        customer_address = gets.chomp
+        puts "What is your birthday?"
+        customer_birthday = gets.chomp
+        puts "What is your budget?"
+        customer_budget = gets.chomp
+        Customer.find_or_create_by(name: customer_name, address: customer_address, birthday: customer_birthday, budget: customer_budget)
         puts "You have now been added to our system"
-    end 
-end 
+    end
+end
+
