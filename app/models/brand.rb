@@ -1,4 +1,6 @@
 class Brand < ActiveRecord::Base
+    has_many :handbags
+
     attr_reader :name
 
     @@all = []
