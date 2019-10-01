@@ -27,20 +27,20 @@ daphnemamoulides = Customer.find_or_create_by(name: "Daphne Mamoulides", birthda
 heidialbrecht = Customer.find_or_create_by(name: "Heidi Albrecht", birthday: "04.17.1991", address: "4212 Dartford Dr. Seattle, WA 98101", budget: 800.00)
 
 #Handbag
-chanel_boybag = Handbag.find_or_create_by(brand: chanel, model_name: "Boy Bag small", cost: 800)
-chanel_caviar = Handbag.find_or_create_by(brand: "Chanel", model_name: "Caviar small", cost: 800)
-prada_cahier = Handbag.find_or_create_by(brand: "Prada", model_name: "Cahier small", cost: 400)
-prada_bucketbag = Handbag.find_or_create_by(brand: "Prada", model_name: "Nylon Bucket Bag", cost: 400)
-chloe_faye = Handbag.find_or_create_by(brand: "Chloe", model_name: "Faye small", cost: 400)
-chloe_tess = Handbag.find_or_create_by(brand: "Chloe", model_name: "Tess small", cost: 400)
-gucci_dionysus = Handbag.find_or_create_by(brand: "Gucci", model_name: "Gucci Dionysus small", cost: 400)
-gucci_marmont = Handbag.find_or_create_by(brand: "Gucci", model_name: "Gucci Marmont small", cost: 400)
-celine_luggage = Handbag.find_or_create_by(brand: "Celine", model_name: "Celine Luggage small", cost: 400)
-celine_boxbag = Handbag.find_or_create_by(brand: "Celine", model_name: "Celine Box Bag", cost: 400)
-coach_tabby = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Tabby", cost: 100)
-coach_dreamer = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Dreamer", cost: 100)
+chanel_boybag = Handbag.find_or_create_by(brand: chanel, bag_type: "Boy Bag small", cost: 800)
+chanel_caviar = Handbag.find_or_create_by(brand: chanel, bag_type: "Caviar small", cost: 800)
+prada_cahier = Handbag.find_or_create_by(brand: prada, bag_type: "Cahier small", cost: 400)
+prada_bucketbag = Handbag.find_or_create_by(brand: prada, bag_type: "Nylon Bucket Bag", cost: 400)
+chloe_faye = Handbag.find_or_create_by(brand: chloe, bag_type: "Faye small", cost: 400)
+chloe_tess = Handbag.find_or_create_by(brand: chloe, bag_type: "Tess small", cost: 400)
+gucci_dionysus = Handbag.find_or_create_by(brand: gucci, bag_type: "Gucci Dionysus small", cost: 400)
+gucci_marmont = Handbag.find_or_create_by(brand: gucci, bag_type: "Gucci Marmont small", cost: 400)
+celine_luggage = Handbag.find_or_create_by(brand: celine, bag_type: "Celine Luggage small", cost: 400)
+celine_boxbag = Handbag.find_or_create_by(brand: celine, bag_type: "Celine Box Bag", cost: 400)
+coach_tabby = Handbag.find_or_create_by(brand: coach, bag_type: "Coach Tabby", cost: 100)
+coach_dreamer = Handbag.find_or_create_by(brand: coach, bag_type: "Coach Dreamer", cost: 100)
 
-# Rental
+# Renta
 rental1 = Rental.find_or_create_by(customer: christinapark, handbag: chanel_boybag)
 rental2 = Rental.find_or_create_by(customer: heejaehan, handbag: prada_cahier)
 rental3 = Rental.find_or_create_by(customer: heejaehan, handbag: coach_tabby)
