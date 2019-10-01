@@ -1,18 +1,18 @@
 #Brand
-chanel = Brand.find_or_create_by("Chanel")
-prada = Brand.find_or_create_by("Prada")
-chloe = Brand.find_or_create_by("Chloe")
-gucci = Brand.find_or_create_by("Gucci")
-valentino = Brand.find_or_create_by("Valentino")
-saintlaurent = Brand.find_or_create_by("Saint Laurent")
-celine = Brand.find_or_create_by("Celine")
-balenciaga = Brand.find_or_create_by("Balenciaga")
-coach = Brand.find_or_create_by("Coach")
-marcjacobs = Brand.find_or_create_by("Marc Jacobs")
-mk = Brand.find_or_create_by("Michael Kors")
-tb = Brand.find_or_create_by("Tory Burch")
-ks = Brand.find_or_create_by("Kate Spade")
-supreme = Brand.find_or_create_by("Supreme")
+chanel = Brand.find_or_create_by(name: "Chanel")
+prada = Brand.find_or_create_by(name: "Prada")
+chloe = Brand.find_or_create_by(name: "Chloe")
+gucci = Brand.find_or_create_by(name: "Gucci")
+valentino = Brand.find_or_create_by(name: "Valentino")
+saintlaurent = Brand.find_or_create_by(name: "Saint Laurent")
+celine = Brand.find_or_create_by(name: "Celine")
+balenciaga = Brand.find_or_create_by(name: "Balenciaga")
+coach = Brand.find_or_create_by(name: "Coach")
+marcjacobs = Brand.find_or_create_by(name: "Marc Jacobs")
+mk = Brand.find_or_create_by(name: "Michael Kors")
+tb = Brand.find_or_create_by(name: "Tory Burch")
+ks = Brand.find_or_create_by(name: "Kate Spade")
+supreme = Brand.find_or_create_by(name: "Supreme")
 
 #Customer
 christinapark = Customer.find_or_create_by(name: "Christina Park", birthday: "01.17.1990", address: "7414 Colshire Dr. Mclean, VA 22102", budget: 800.00)
@@ -41,3 +41,4 @@ coach_tabby = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Tabby
 coach_dreamer = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Dreamer", cost: 100)
 
 # Rental
+rental1 = Rental.find_or_create_by(christinapark, chanel_boybag)
