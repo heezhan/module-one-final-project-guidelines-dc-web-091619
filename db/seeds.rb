@@ -40,7 +40,7 @@ celine_boxbag = Handbag.find_or_create_by(brand: celine, bag_type: "Celine Box B
 coach_tabby = Handbag.find_or_create_by(brand: coach, bag_type: "Coach Tabby", cost: 100)
 coach_dreamer = Handbag.find_or_create_by(brand: coach, bag_type: "Coach Dreamer", cost: 100)
 
-# Renta
+#Rental 
 rental1 = Rental.find_or_create_by(customer: christinapark, handbag: chanel_boybag)
 rental2 = Rental.find_or_create_by(customer: heejaehan, handbag: prada_cahier)
 rental3 = Rental.find_or_create_by(customer: heejaehan, handbag: coach_tabby)
