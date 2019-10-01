@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 #Brand
 chanel = Brand.find_or_create_by("Chanel")
 prada = Brand.find_or_create_by("Prada")
@@ -43,4 +41,3 @@ coach_tabby = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Tabby
 coach_dreamer = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Dreamer", cost: 100)
 
 # Rental
->>>>>>> bca6ad92ef5c8c7894fec5780b68911184dcca6e
