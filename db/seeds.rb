@@ -41,4 +41,7 @@ coach_tabby = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Tabby
 coach_dreamer = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Dreamer", cost: 100)
 
 # Rental
-rental1 = Rental.find_or_create_by(customer: christinapark, chanel_boybag)
+rental1 = Rental.find_or_create_by(customer: christinapark, handbag: chanel_boybag)
+rental2 = Rental.find_or_create_by(customer: heejaehan, handbag: prada_cahier)
+rental3 = Rental.find_or_create_by(customer: heejaehan, handbag: coach_tabby)
+rental4 = Rental.find_or_create_by(customer: kaileylee, handbag: coach_dreamer)
