@@ -1,0 +1,13 @@
+#Handbag
+chanel_boybag = Hangbag.find_or_create_by(brand: "Chanel", model_name: "Boy Bag small", cost: 800)
+chanel_caviar = Handbag.find_or_create_by(brand: "Chanel", model_name: "Caviar small", cost: 800)
+prada_cahier = Handbag.find_or_create_by(brand: "Prada", model_name: "Cahier small", cost: 400)
+prada_bucketbag = Handbag.find_or_create_by(brand: "Prada", model_name: "Nylon Bucket Bag", cost: 400)
+chloe_faye = Handbag.find_or_create_by(brand: "Chloe", model_name: "Faye small", cost: 400)
+chloe_tess = Handbag.find_or_create_by(brand: "Chloe", model_name: "Tess small", cost: 400)
+gucci_dionysus = Handbag.find_or_create_by(brand: "Gucci", model_name: "Gucci Dionysus small", cost: 400)
+gucci_marmont = Handbag.find_or_create_by(brand: "Gucci", model_name: "Gucci Marmont small", cost: 400)
+celine_luggage = Handbag.find_or_create_by(brand: "Celine", model_name: "Celine Luggage small", cost: 400)
+celine_boxbag = Handbag.find_or_create_by(brand: "Celine", model_name: "Celine Box Bag", cost: 400)
+coach_tabby = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Tabby", cost: 100)
+coach_dreamer = Handbag.find_or_create_by(brand: "Coach", model_name: "Coach Dreamer", cost: 100)
