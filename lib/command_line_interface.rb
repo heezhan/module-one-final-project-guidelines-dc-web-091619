@@ -13,4 +13,5 @@ def get_name_from_user
         Customer.find_or_create_by(name: customer_name)
         puts "You have now been added to our system"
     end 
-end 
+end
+
