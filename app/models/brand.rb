@@ -9,6 +9,10 @@ class Brand < ActiveRecord::Base
         puts self.pluck(:name)
     end 
 
+    def message_brand
+        "Heyy my brand is #{self.name}"
+    end
+
     def self.ask_brand
         puts "\nWhat brand are you interested in?"
         customer_brand = gets.chomp

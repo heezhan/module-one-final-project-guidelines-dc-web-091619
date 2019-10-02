@@ -1,3 +1,4 @@
+Brand.destroy_all
 #Brand
 chanel = Brand.find_or_create_by(name: "Chanel")
 prada = Brand.find_or_create_by(name: "Prada")
@@ -14,6 +15,7 @@ tb = Brand.find_or_create_by(name: "Tory Burch")
 ks = Brand.find_or_create_by(name: "Kate Spade")
 supreme = Brand.find_or_create_by(name: "Supreme")
 
+Customer.destroy_all
 #Customer
 christinapark = Customer.find_or_create_by(name: "Christina Park", birthday: "01.17.1990", address: "7414 Colshire Dr. Mclean, VA 22102", budget: 800.00)
 heejaehan = Customer.find_or_create_by(name: "Heejae Han", birthday: "11.18.1994", address: "1206 Ballantrae Ln. McLean, VA 22101", budget: 600.00)
@@ -26,6 +28,7 @@ gracekwon = Customer.find_or_create_by(name: "Grace Kwon", birthday: "12.23.1982
 daphnemamoulides = Customer.find_or_create_by(name: "Daphne Mamoulides", birthday: "07.01.1990", address: "533A Putnam Ave. #2 Brooklyn, NY 11221", budget: 600.00)
 heidialbrecht = Customer.find_or_create_by(name: "Heidi Albrecht", birthday: "04.17.1991", address: "4212 Dartford Dr. Seattle, WA 98101", budget: 800.00)
 
+Handbag.destroy_all
 #Handbag
 chanel_boybag = Handbag.find_or_create_by(brand: chanel, bag_type: "Boy Bag small", cost: 800)
 chanel_caviar = Handbag.find_or_create_by(brand: chanel, bag_type: "Caviar small", cost: 800)

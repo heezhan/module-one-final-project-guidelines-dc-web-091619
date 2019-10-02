@@ -1,4 +1,5 @@
 require 'pry'
+require_relative '../config/environment'
 
 def welcome
     puts "                
@@ -27,4 +28,9 @@ end
 
 def message_for_shopping_cart
     puts "\nYou have checked out the following bags:"
+end 
+
+def bag_return_message
+    puts "\nThese are the bags you have rented out"
+    puts "Which one are you returning?\n"
 end 
