@@ -33,4 +33,23 @@ end
 def bag_return_message
     puts "\nThese are the bags you have rented out"
     puts "Which one are you returning?\n"
-end 
+end
+
+# Prompt for a new customer. The customer responses will be stored in an array
+def new_customer_prompt
+  response = []
+  puts "\nWelcome new customer! We will now ask you for some information to set up your account."
+  puts "\nWhat is your address?"
+  response.push(gets.chomp)
+  puts "\nWhat is your birthday?"
+  response.push(gets.chomp)
+  puts "\nWhat is your budget?"
+  response.push(gets.chomp)
+  response
+end
+
+# Prompt for an existing customer
+def returning_costumer_prompt(customer_name)
+  puts "\nWelcome back #{customer_name}!"
+  puts "Do you want to rent or return?"
+end
