@@ -1,4 +1,4 @@
 class Rental < ActiveRecord::Base
     belongs_to :customer 
-    belongs_to :handbag 
-end 
+    belongs_to :handbag
+end
