@@ -21,5 +21,7 @@ class Brand < ActiveRecord::Base
         found_brand.handbags.each do |handbag|
             puts "#{handbag.bag_type} --- $#{handbag.cost.to_i}"
         end 
-    end 
+    end
+
+
 end
