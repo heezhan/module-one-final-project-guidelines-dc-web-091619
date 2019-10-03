@@ -4,13 +4,10 @@ def rent_or_return(customer_name)
   array = Customer.find_by_name(customer_name).handbags.to_a
 
   # Customers with no rentals
-  if array.length == 0
-    message_to_output_brands
-  else
-    Customer.find_by_name(customer_name)
+  if Customer.find_by(name: customer_name)
     customer_answer = gets.chomp
     if customer_answer == "rent"
-      message_to_output_brands
+      "\n"
     else
       bag_return_message
       Customer.bag_type(customer_name)
@@ -23,6 +20,8 @@ def rent_or_return(customer_name)
       handbag_rental = Rental.where(handbag_id: matched_bag.id, customer_id: customer_instance.id)
       only_handbag = handbag_rental[0]
       Rental.delete(only_handbag.id)
+      puts "\nYou have successfully made a return!"
+      puts "Go back to the main page?"
     end
   end
 end
@@ -31,6 +30,9 @@ welcome
 ask_for_name 
 customer_name = gets.chomp
 customer = Customer.find_or_create_customer(customer_name)
+
+
+
 rent_or_return(customer_name)
 # Customer.create_or_find_by(customer_name)
 # message_to_output_brands 
@@ -43,4 +45,5 @@ Customer.find_by_name(customer_name).handbags << handbag_instance
 message_for_shopping_cart
 Customer.bag_type(customer_name)
 
-#ask Continue shopping?
+
+#ask Continue shopping

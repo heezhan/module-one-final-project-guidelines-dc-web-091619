@@ -24,6 +24,8 @@ class Customer < ActiveRecord::Base
         self.all.find_by(name: customer_name)
     end 
 
+    
+
     # Creates a new customer with the customer inputs that will be passed in from customer new prompt array
     def self.new_customer(customer_name, customer_address, customer_birthday, customer_budget)
         self.find_or_create_by(name: customer_name, address: customer_address, birthday: customer_birthday, budget: customer_budget)
@@ -35,4 +37,7 @@ class Customer < ActiveRecord::Base
             puts handbag.bag_type 
         end 
     end
+
+    
+    
 end 

@@ -6,12 +6,9 @@ class Brand < ActiveRecord::Base
     end 
 
     def self.show_brands
+        message_to_output_brands
         puts self.pluck(:name)
     end 
-
-    def message_brand
-        "Heyy my brand is #{self.name}"
-    end
 
     def self.ask_brand
         puts "\nWhat brand are you interested in?"
