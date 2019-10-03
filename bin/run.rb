@@ -28,7 +28,7 @@ def rent_or_return(customer_name)
 end
 
 welcome
-ask_for_name
+ask_for_name 
 customer_name = gets.chomp
 customer = Customer.find_or_create_customer(customer_name)
 rent_or_return(customer_name)
@@ -42,3 +42,5 @@ handbag_instance = Handbag.find_by(bag_type: customer_bag)
 Customer.find_by_name(customer_name).handbags << handbag_instance
 message_for_shopping_cart
 Customer.bag_type(customer_name)
+
+#ask Continue shopping?
