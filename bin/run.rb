@@ -23,7 +23,6 @@ def rent_or_return(customer_name)
             handbag_rental = Rental.where(handbag_id: matched_bag.id, customer_id: customer_instance.id)
             only_handbag = handbag_rental[0]
             Rental.delete(only_handbag.id)
-            binding.pry
         end 
     else Customer.new_customer(customer_name)
         message_to_output_brands

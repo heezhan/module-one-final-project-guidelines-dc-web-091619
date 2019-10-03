@@ -28,6 +28,7 @@ class Customer < ActiveRecord::Base
 
     def self.bag_type(customer_name)
         self.find_by_name(customer_name).handbags. each do |handbag|
+            binding.pry
             puts handbag.bag_type 
         end 
     end 
