@@ -1,8 +1,11 @@
 
+require 'pry'
+
 describe "Customer" do
-  let (:customer) {Customer.find_by(name: "Christina Park")}
-  it "looks through all the customers and find the first customer name that matches the parameter" do
-    expect(Customer.find_by_name("Christina Park")).to eq(customer)
+  let (:customer_name) {Customer.find_by(name: "Christina Park")}
+  let (:boy_bag) {Handbag.find_by_name("Boy Bag small")}
+
+  it "finds the handbag information of the bag type that was rented by the customer" do
+    expect(Customer.bag_type("Christina Park")).to include(boy_bag)
   end
 end
-
