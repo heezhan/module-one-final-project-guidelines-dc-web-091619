@@ -1,8 +1,6 @@
 class Brand < ActiveRecord::Base
     has_many :handbags
-    
 
-<<<<<<< HEAD
     def self.show_brands
         puts self.pluck(:name)
       #returning all the names from the brand table
@@ -24,7 +22,4 @@ class Brand < ActiveRecord::Base
 
 
 end
-=======
-   
-end
->>>>>>> master
+

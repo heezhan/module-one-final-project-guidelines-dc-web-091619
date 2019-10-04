@@ -1,5 +1,6 @@
-require 'pry'
+
 require_relative '../config/environment'
+
 class Cli
   attr_accessor :customer_name
     def welcome
@@ -17,7 +18,7 @@ class Cli
     end
 
     def ask_for_name
-        puts "\n* Please enter your name:"
+        puts "\n* Please enter your name (Name Lastname):"
         @customer_name = gets.chomp
   
         find_or_create_customer(@customer_name)
@@ -56,7 +57,7 @@ class Cli
         customer = Customer.create(name: customer_name, address: registration_information[0], birthday: registration_information[1], budget: registration_information[2])
     
         # self.create(name: customer_name, address: customer_address, birthday: customer_birthday, budget: customer_budget)
-        puts "\nYou have now been added to our system!"
+        puts "\n* You have now been added to our system!"
       end
       customer
       self.show_brands
@@ -73,9 +74,9 @@ class Cli
     end 
 
     def ask_brand
-      puts "\nWhat brand are you interested in?"
+      puts "\n* What brand are you interested in?"
       customer_brand = gets.chomp
-      puts "\nWe have the following bags available from #{customer_brand}:"
+      puts "\n* We have the following bags available from #{customer_brand}:"
       found_brand = Brand.all.find_by(name: customer_brand) 
       found_brand.handbags.each do |handbag|
           puts "#{handbag.bag_type} --- $#{handbag.cost.to_i}"
@@ -89,6 +90,8 @@ class Cli
       customer_bag = gets.chomp
       handbag_instance = Handbag.find_by(bag_type: customer_bag)
       Customer.find_by(name: customer_name).handbags << handbag_instance
+      puts "\n* You now have the following bags checked out:"
+      Customer.bag_type(@customer_name)
       message_for_shopping_cart
     end 
 
@@ -97,40 +100,58 @@ class Cli
       
         # Customers with no rentals
           customer_answer = gets.chomp
-          if customer_answer == "rent"
+          if customer_answer.downcase == "rent"
             show_brands
-          else
-            bag_return_message
-            Customer.bag_type(customer_name)
-            customer_answer = gets.chomp
-            customer_instance = Customer.find_by_name(customer_name)
-            array = Customer.find_by_name(customer_name).handbags.to_a
-            matched_bag = array.find do |handbag|
-              handbag.bag_type == customer_answer
-            end
-            handbag_rental = Rental.where(handbag_id: matched_bag.id, customer_id: customer_instance.id)
-            only_handbag = handbag_rental[0]
-            Rental.delete(only_handbag.id)
-            puts "\nYou have successfully made a return!"
-            puts "Go back to the main page?"
+          elsif customer_answer.downcase == "return"
+            if array.length == 0
+              puts "* You have no returns"
+              message_for_shopping_cart
+            else
+              bag_return_message
+              Customer.bag_type(customer_name)
+              puts "\n* Which one are you returning?\n"
+              customer_answer = gets.chomp
+              customer_instance = Customer.find_by_name(customer_name)
+              array = Customer.find_by_name(customer_name).handbags.to_a
+              matched_bag = array.find do |handbag|
+                handbag.bag_type == customer_answer
+              end
+              handbag_rental = Rental.where(handbag_id: matched_bag.id, customer_id: customer_instance.id)
+              only_handbag = handbag_rental[0]
+              Rental.delete(only_handbag.id)
+              puts "\n* You have successfully made a return!"
+              message_for_shopping_cart
+            end 
+          else 
+            puts "\n* Please type 'rent' or 'return'"
+            self.rent_or_return(customer_name)
           end
-        end
+    end 
 
     def message_for_shopping_cart
-        puts "\n* You have checked out the following bags:"
-        Customer.bag_type(@customer_name)
-        puts "\n Do you want to continue shopping? Please type Yes or No"
+        # puts "\n* You have checked out the following bags:"
+        # Customer.bag_type(@customer_name)
+        puts "\n* Do you want to continue shopping? Please type Yes or No"
         user_answer = gets.chomp
         if user_answer == "Yes"
           show_brands
         else 
-          puts "Have a nice day"
+          puts "                 
+          *          .            
+              *       '
+          *                *     
+          Have a nice day! 
+                                      *    *
+      *    *                          
+                  *
+          *
+                  *"
         end 
     end 
 
     def bag_return_message
-        puts "\n* These are the bags you have rented out"
-        puts "Which one are you returning?\n"
+        puts "\n* These are the bags you have rented out:"
+        # puts "* Which one are you returning?\n"
     end
 
     # Prompt for an existing customer
