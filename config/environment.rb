@@ -1,6 +1,7 @@
 require 'bundler'
 Bundler.require
 
+require 'colorized_string'
 require_relative "../lib/seed_communicator.rb"
 require_relative "../lib/command_line_interface.rb"
 

@@ -1,5 +1,6 @@
 
 require_relative '../config/environment'
+require 'pry'
 
 class Cli
   attr_accessor :customer_name
@@ -13,7 +14,7 @@ class Cli
     *    *                          
                 *
         *
-                *"
+                *".colorize(:yellow)
         
     end
 
@@ -86,7 +87,8 @@ class Cli
 
     def checkout(customer_name)
       customer_instance = Customer.find_by(name: customer_name)
-      puts "\n* What bag would you like to checkout? You currently have #{customer_instance.budget.to_i} credits." 
+      puts "\n* What bag would you like to checkout? You currently have #{customer_instance.budget.to_i} credits."
+      puts "* Please enter name exactly as shown"
       customer_bag = gets.chomp
       handbag_instance = Handbag.find_by(bag_type: customer_bag)
       Customer.find_by(name: customer_name).handbags << handbag_instance
@@ -134,6 +136,8 @@ class Cli
         puts "\n* Do you want to continue shopping? Please type Yes or No"
         user_answer = gets.chomp
         if user_answer == "Yes"
+          puts "\n* Do you want to rent or return?"
+          rent_or_return(customer_name)
           show_brands
         else 
           puts "                 
@@ -145,7 +149,7 @@ class Cli
       *    *                          
                   *
           *
-                  *"
+                  *".colorize(:yellow)
         end 
     end 
 
