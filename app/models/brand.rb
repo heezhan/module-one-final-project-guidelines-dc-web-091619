@@ -7,6 +7,7 @@ class Brand < ActiveRecord::Base
 
     def self.show_brands
         puts self.pluck(:name)
+      #returning all the names from the brand table
     end 
 
     def message_brand
