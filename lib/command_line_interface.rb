@@ -26,11 +26,11 @@ class Cli
 
     end 
 
-    def returning_customer_prompt(customer_name)
-      puts "\n* Welcome back #{customer_name}!"
-      puts "* Do you want to rent or return?"
-      # rent_or_return
-    end
+    # def returning_customer_prompt(customer_name)
+    #   puts "\n* Welcome back #{customer_name}!"
+    #   puts "* Do you want to: rent or return?"
+    #   # rent_or_return
+    # end
 
     # Prompt for a new customer. The customer responses will be stored in an array
     def new_customer_prompt
@@ -93,8 +93,12 @@ class Cli
       handbag_instance = Handbag.find_by(bag_type: customer_bag)
       Customer.find_by(name: customer_name).handbags << handbag_instance
       puts "\n* You now have the following bags checked out:"
-      Customer.bag_type(@customer_name)
+      rented_bags(customer_name)
       message_for_shopping_cart
+    end 
+
+    def rented_bags(customer_name)
+      Customer.bag_type(@customer_name)
     end 
 
     def rent_or_return(customer_name)
@@ -124,6 +128,10 @@ class Cli
               puts "\n* You have successfully made a return!"
               message_for_shopping_cart
             end 
+          elsif customer_answer.downcase == "check rentals"
+            puts "\n* Your current rentals are: "
+            rented_bags(customer_name)
+            message_for_shopping_cart
           else 
             puts "\n* Please type 'rent' or 'return'"
             self.rent_or_return(customer_name)
@@ -150,6 +158,7 @@ class Cli
                   *
           *
                   *".colorize(:yellow)
+          return
         end 
     end 
 
@@ -161,6 +170,6 @@ class Cli
     # Prompt for an existing customer
     def returning_customer_prompt(customer_name)
         puts "\n* Welcome back #{customer_name}!"
-        puts "* Do you want to rent or return?"
+        puts "* Do you want to: rent, return or check rentals?"
     end
 end 
