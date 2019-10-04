@@ -9,4 +9,4 @@ gem "rspec"
 
 gem 'activerecord','5.2'
 gem 'rake'
-
+gem 'colorize', '~> 0.8.1'
